@@ -22,14 +22,21 @@ class App extends Component {
     const { manager, players, balancePool } = this.state;
   
     return (
-      <div className="App">
-        <h2>lottery Contract</h2>
-        <p>This contract is managed by {manager}</p>
-        <p>
-          There are currently { players.length} people that have entered the pool,
-          competing to win {web3.utils.fromWei(balancePool, "ether")} amount of
-          ether.
-        </p>
+      <div>
+        <h2 className="ui inverted header vertical center aligned segment">LOTTERY CONTRACT</h2>
+        <div className="ui fluid container">
+          <div className="ui block header very padded text center aligned segment">
+            <p className="ui tiny header">This contract is managed by {manager}</p>
+            <p className="sub header">
+              There are currently <b>{ players.length}</b> people that have entered the pool,
+              competing to win <b>{web3.utils.fromWei(balancePool, "ether")}</b> amount of
+              ether.
+            </p>
+          </div>
+        </div>
+        <div className="ui container">
+
+        </div>
       </div>
     );
   }
