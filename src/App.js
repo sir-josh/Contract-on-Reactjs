@@ -8,6 +8,7 @@ class App extends Component {
     manager: "",
     players: [],
     balancePool: "",
+    value: '',
   };
 
   async componentDidMount() {
@@ -19,11 +20,12 @@ class App extends Component {
   }
 
   render() {
-    const { manager, players, balancePool } = this.state;
+    const { manager, players, balancePool, value } = this.state;
   
     return (
       <div>
         <h2 className="ui inverted header vertical center aligned segment">LOTTERY CONTRACT</h2>
+
         <div className="ui fluid container">
           <div className="ui block header very padded text center aligned segment">
             <p className="ui tiny header">This contract is managed by {manager}</p>
@@ -34,8 +36,19 @@ class App extends Component {
             </p>
           </div>
         </div>
-        <div className="ui container">
 
+        <div className="ui container">
+            <form>
+              <h4>Want to try your luck?</h4>
+              <div>
+                <label>Amount of ether to enter</label>
+                <input 
+                  value={value}
+                  onChange={ e => this.setState({ value: e.target.value })}                
+                />
+              </div>
+              <button>Enter</button>
+            </form>
         </div>
       </div>
     );
